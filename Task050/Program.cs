@@ -56,20 +56,6 @@ void print2DArray(int[,] arrayToPrint)
     }
 }
 
-void printArray(int[] incomingArray)
-{
-    Console.Write("[");
-    for (int i = 0; i < incomingArray.Length; i++)
-    {
-        Console.Write(incomingArray[i]);
-        if (i < incomingArray.Length - 1)
-        {
-            Console.Write(", ");
-        }
-    }
-    Console.WriteLine("]");
-}
-
 void findElementInArray(int[,] generateArray, int position)
 {
     if (position < generateArray.GetLength(1))
@@ -78,32 +64,16 @@ void findElementInArray(int[,] generateArray, int position)
     }
     else
     {
-
-        int row = (position / generateArray.GetLength(0) - 1);
-        if (row < 0)
-        {
-            Console.WriteLine($"Строка: {row + 1}");
-            row += 1;
-        }
-        else Console.WriteLine($"Строка: {row}");
-
+        int row = (position / generateArray.GetLength(1));
+        Console.WriteLine($"Строка: {row}");
+        
         int column = (position % generateArray.GetLength(1));
-        if (column == 0)
-        {
-            column = +1;
-            Console.WriteLine($"Столбец: {column}");
-        }
-        else
-        {
-            Console.WriteLine($"Столбец: {column}");
-        }
+        Console.WriteLine($"Столбец: {column}");
+
 
         Console.WriteLine($"{position} -> {generateArray[row, column]}");
     }
-    
 }
-
-
 
 Console.WriteLine("Задайте двумерный массив.");
 Console.Write("Количество строк: ");

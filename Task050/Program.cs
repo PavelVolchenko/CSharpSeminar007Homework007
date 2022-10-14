@@ -63,14 +63,8 @@ void findElementInArray(int[,] generateArray, int position)
         Console.WriteLine($"{position} -> {generateArray[0, position]}");
     }
     else
-    {
-        int row = (position / generateArray.GetLength(1));
-        Console.WriteLine($"Строка: {row}");
-        
+    {   int row = (position / generateArray.GetLength(1));        
         int column = (position % generateArray.GetLength(1));
-        Console.WriteLine($"Столбец: {column}");
-
-
         Console.WriteLine($"{position} -> {generateArray[row, column]}");
     }
 }

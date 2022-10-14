@@ -58,14 +58,22 @@ void print2DArray(int[,] arrayToPrint)
 
 void findElementInArray(int[,] generateArray, int position)
 {
-    if (position < generateArray.GetLength(1))
+    if (position >= generateArray.GetLength(1) * generateArray.GetLength(0))
     {
-        Console.WriteLine($"{position} -> {generateArray[0, position]}");
+        Console.WriteLine($"{position} -> такого числа в массиве нет");
     }
     else
-    {   int row = (position / generateArray.GetLength(1));        
-        int column = (position % generateArray.GetLength(1));
-        Console.WriteLine($"{position} -> {generateArray[row, column]}");
+    {
+        if (position < generateArray.GetLength(1))
+        {
+            Console.WriteLine($"{position} -> {generateArray[0, position]}");
+        }
+        else
+        {
+            int row = (position / generateArray.GetLength(1));
+            int column = (position % generateArray.GetLength(1));
+            Console.WriteLine($"{position} -> {generateArray[row, column]}");
+        }
     }
 }
 
